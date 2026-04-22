@@ -13,13 +13,17 @@
         .gold-gradient { background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
         
-        /* ESTA É A PARTE DA TUA IMAGEM */
+        /* --- SECÇÃO DA IMAGEM --- */
         .hero-bg { 
-            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.2), #050505), url('agathos-hero.jpg');
+            /* 👇 Cole o código Base64 que você copiou, substituindo a URL abaixo. 👇 */
+            /* Exemplo de formato: background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEA..."); */
+            background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.2), #050505), url('SUBSTITUA_ESTA_URL_PELO_CODIGO_BASE64_DA_SUA_IMAGEM');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+        /* ------------------------ */
+
         .token-card { border-left: 2px solid #bf953f; transition: all 0.3s; }
         .token-card:hover { background: rgba(191, 149, 63, 0.05); }
     </style>
