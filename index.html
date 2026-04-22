@@ -11,121 +11,117 @@
         body { font-family: 'Inter', sans-serif; background-color: #050505; color: #e5e5e5; scroll-behavior: smooth; }
         .ancient-font { font-family: 'Cinzel', serif; }
         .gold-gradient { background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
         
-        /* Renderização da tua imagem agathos-hero.jpg */
         .hero-bg { 
-            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.3), #050505), url('agathos-hero.jpg');
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.4), #050505), url('agathos-hero.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Melhor performance em mobile que o fixed */
         }
+        @media (min-width: 768px) { .hero-bg { background-attachment: fixed; } }
+
         .token-card { border-left: 2px solid #bf953f; transition: all 0.3s; }
-        .token-card:hover { background: rgba(191, 149, 63, 0.08); transform: translateY(-5px); }
+        .break-words-all { word-break: break-all; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full z-50 py-4 px-8 flex justify-between items-center glass">
-        <span class="ancient-font gold-gradient font-bold text-xl tracking-widest uppercase">Agathos AI</span>
-        <div class="flex gap-6 text-xl">
-            <a href="https://x.com/AgathosAi" target="_blank" class="hover:text-yellow-500 transition-all"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="hover:text-yellow-500 transition-all"><i class="fa-brands fa-telegram"></i></a>
+    <nav class="fixed top-0 w-full z-50 py-3 md:py-4 px-4 md:px-8 flex justify-between items-center glass">
+        <span class="ancient-font gold-gradient font-bold text-lg md:text-xl tracking-widest uppercase">Agathos AI</span>
+        <div class="flex gap-4 md:gap-6 text-lg md:text-xl">
+            <a href="https://x.com/AgathosAi" target="_blank" class="hover:text-yellow-500"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="hover:text-yellow-500"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 text-center hero-bg px-6">
-        <div class="relative z-10 max-w-5xl">
-            <h1 class="ancient-font text-6xl md:text-9xl mb-4 gold-gradient font-bold uppercase tracking-tighter drop-shadow-2xl">Agathos AI</h1>
-            <p class="text-xl md:text-3xl text-gray-100 mb-8 font-light italic tracking-widest uppercase">Ancient Values • Modern Tech • Real Impact</p>
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 text-center hero-bg px-4">
+        <div class="relative z-10 w-full max-w-5xl">
+            <h1 class="ancient-font text-4xl sm:text-6xl md:text-9xl mb-4 gold-gradient font-bold uppercase tracking-tight md:tracking-tighter drop-shadow-2xl">Agathos AI</h1>
+            <p class="text-lg md:text-3xl text-gray-100 mb-8 font-light italic tracking-wide">"Ancient Values. Modern Tech. Real Impact."</p>
             
-            <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <a href="https://pump.fun/GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump" target="_blank" class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 px-12 rounded-full transition-all tracking-widest uppercase shadow-lg shadow-yellow-600/30">Buy $AGTS</a>
-                <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="glass text-white font-semibold py-4 px-12 rounded-full transition-all hover:bg-white/10 border-white/20 uppercase tracking-widest">Join the Polis</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+                <a href="https://pump.fun/GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump" target="_blank" class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 px-8 md:px-12 rounded-full transition-all tracking-widest uppercase shadow-lg shadow-yellow-600/20 text-sm md:text-base">Buy $AGTS</a>
+                <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="glass text-white font-semibold py-4 px-8 md:px-12 rounded-full transition-all hover:bg-white/10 border-white/20 uppercase tracking-widest text-sm md:text-base">Join Community</a>
             </div>
 
-            <div class="glass p-5 rounded-2xl inline-flex flex-col md:flex-row items-center gap-4 border-yellow-600/30 max-w-full">
-                <span class="text-xs text-yellow-600 font-mono font-bold uppercase tracking-[0.2em]">Contract Address:</span>
-                <code class="text-sm md:text-base font-bold text-white break-all tracking-wider">GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump</code>
+            <div class="glass p-4 rounded-xl inline-flex flex-col items-center gap-2 border-yellow-600/30 w-full max-w-lg">
+                <span class="text-[10px] md:text-xs text-yellow-600 font-mono font-bold uppercase tracking-[0.2em]">Contract (CA)</span>
+                <code class="text-xs md:text-sm font-bold text-white break-words-all tracking-tighter md:tracking-widest">GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump</code>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 max-w-6xl mx-auto space-y-32">
+    <div class="px-4 md:px-6 max-w-6xl mx-auto space-y-20 md:space-y-32 py-16 md:py-24">
         
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="ancient-font text-4xl gold-gradient mb-8 uppercase tracking-widest">A Legacy of Honor</h2>
-                <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                    In Ancient Greece, <strong>Agathos</strong> was the ultimate title for a citizen. It didn't just mean being "good"—it meant being noble, brave, and useful to the community.
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="text-center md:text-left">
+                <h2 class="ancient-font text-3xl md:text-4xl gold-gradient mb-6 uppercase tracking-widest">A Lineage of Honor</h2>
+                <p class="text-gray-300 leading-relaxed text-base md:text-lg mb-4 text-justify md:text-left">
+                    In Ancient Greece, <strong>Agathos</strong> belonged to those who were not just successful, but **brave and useful to their people**. 
                 </p>
-                <p class="text-gray-400 leading-relaxed">
-                    While the market is flooded with meaningless "meme trash," Agathos AI stands as a rebellion. We restore the tradition of <strong>Areté</strong> (Excellence). We are building a legacy, not just a chart.
+                <p class="text-gray-400 leading-relaxed italic text-sm md:text-base">
+                    We are the rebellion against "Meme Trash." We build for the long term, rooted in 2,500 years of philosophy.
                 </p>
             </div>
-            <div class="order-1 md:order-2 glass p-12 rounded-[3rem] border-yellow-600/20 text-center">
-                <i class="fa-solid fa-monument text-5xl text-yellow-600 mb-6"></i>
-                <blockquote class="ancient-font text-2xl text-yellow-500 italic mb-4">"Prosperity is only noble when it serves a higher purpose."</blockquote>
-                <p class="text-xs text-gray-600 uppercase tracking-[0.3em]">— The Agathos Oath</p>
+            <div class="glass p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border-yellow-600/10 text-center">
+                <blockquote class="ancient-font text-xl md:text-2xl text-yellow-500 italic mb-4">"Prosperity is only noble when it serves a higher purpose."</blockquote>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest">— The Agathos Oath</p>
             </div>
         </div>
 
-        <div class="text-center space-y-12">
-            <h2 class="ancient-font text-4xl gold-gradient uppercase tracking-widest">Meme Capital • Tech Impact</h2>
-            <p class="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed italic">
-                "We don't pretend to be an AI algorithm. We are a Financial Engine for Social Innovation."
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="glass p-8 rounded-3xl token-card">
-                    <h4 class="font-bold text-yellow-500 mb-4 uppercase tracking-widest text-sm">I. Financing Progress</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Most memes have no 'Why'. We use the power of decentralized capital to fund the development of AI tools and technology that solve real human problems.</p>
+        <div class="text-center">
+            <h2 class="ancient-font text-3xl md:text-4xl gold-gradient mb-10 md:mb-12 uppercase tracking-widest">The Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
+                <div class="glass p-6 md:p-8 rounded-2xl token-card">
+                    <h4 class="font-bold text-yellow-500 mb-3 uppercase text-xs md:text-sm tracking-tighter">1. Financing Progress</h4>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">We are a financial engine. $AGTS capital is destined to fund the development of AI tools that help people in need.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl token-card">
-                    <h4 class="font-bold text-yellow-500 mb-4 uppercase tracking-widest text-sm">II. Real Innovation</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Our goal is to support breakthroughs in healthcare, education, and accessibility. We transform speculative energy into technological reality.</p>
+                <div class="glass p-6 md:p-8 rounded-2xl token-card">
+                    <h4 class="font-bold text-yellow-500 mb-3 uppercase text-xs md:text-sm tracking-tighter">2. Real-World Utility</h4>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Supporting innovation in healthcare, education, and accessibility. We turn speculation into impact.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl token-card">
-                    <h4 class="font-bold text-yellow-500 mb-4 uppercase tracking-widest text-sm">III. Verified Integrity</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">Using modern tech to ensure every act of help is transparent and verified. No corruption, just pure impact driven by the community.</p>
+                <div class="glass p-6 md:p-8 rounded-2xl token-card">
+                    <h4 class="font-bold text-yellow-500 mb-3 uppercase text-xs md:text-sm tracking-tighter">3. Transparency</h4>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">2% Dev bag and community-driven growth. Every step is recorded on-chain for the world to see.</p>
                 </div>
             </div>
         </div>
 
-        <div class="glass p-12 rounded-[4rem] border-white/5 bg-white/[0.01]">
-            <h2 class="ancient-font text-3xl gold-gradient mb-12 text-center uppercase tracking-[0.4em]">Governance & Trust</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="glass p-8 md:p-12 rounded-[2rem] md:rounded-[4rem] text-center">
+            <h2 class="ancient-font text-2xl md:text-3xl gold-gradient mb-8 md:mb-12 uppercase tracking-[0.2em] md:tracking-[0.3em]">Commitment</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div>
-                    <div class="text-4xl font-bold text-white mb-2 tracking-tighter">2%</div>
-                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Dev Allocation</div>
+                    <p class="text-2xl md:text-4xl font-bold text-white">2%</p>
+                    <p class="text-[10px] text-gray-500 uppercase mt-2">Dev Bag</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold text-white mb-2 italic tracking-tighter">Organic</div>
-                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Growth Model</div>
+                    <p class="text-2xl md:text-4xl font-bold text-white italic">Organic</p>
+                    <p class="text-[10px] text-gray-500 uppercase mt-2">Growth</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold text-white mb-2 uppercase tracking-tighter">Burned</div>
-                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Liquidity</div>
+                    <p class="text-2xl md:text-4xl font-bold text-white">Burned</p>
+                    <p class="text-[10px] text-gray-500 uppercase mt-2">Liquidity</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold text-white mb-2 uppercase tracking-tighter">Raydium</div>
-                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Migration Goal</div>
+                    <p class="text-2xl md:text-4xl font-bold text-white">Raydium</p>
+                    <p class="text-[10px] text-gray-500 uppercase mt-2">Target</p>
                 </div>
             </div>
         </div>
 
-    </section>
+    </div>
 
-    <footer class="py-20 border-t border-white/5 text-center px-6">
-        <div class="flex justify-center gap-12 mb-10 text-4xl">
-            <a href="https://x.com/AgathosAi" target="_blank" class="text-gray-600 hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="text-gray-600 hover:text-white transition-all"><i class="fa-brands fa-telegram"></i></a>
+    <footer class="py-12 md:py-20 border-t border-white/5 text-center px-4">
+        <div class="flex justify-center gap-8 md:gap-10 mb-8 text-3xl md:text-4xl">
+            <a href="https://x.com/AgathosAi" target="_blank" class="text-gray-600 hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://t.me/+fP2Yp69mP30yNzg0" target="_blank" class="text-gray-600 hover:text-white"><i class="fa-brands fa-telegram"></i></a>
         </div>
-        <div class="mb-10">
-            <p class="text-gray-500 text-[10px] font-mono uppercase tracking-[0.5em] mb-3">Verified Contract Address</p>
-            <p class="text-yellow-600 font-bold break-all max-w-xl mx-auto tracking-widest text-sm md:text-base">GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump</p>
+        <div class="mb-8">
+            <p class="text-gray-500 text-[9px] md:text-xs font-mono uppercase tracking-[0.3em] mb-2">Verified Contract Address</p>
+            <p class="text-yellow-600 font-bold break-words-all max-w-xl mx-auto text-xs md:text-base px-4">GcdbjUPfCGTNqF9FZeyJjgBbpxcVEUNiyXo9U4Rwpump</p>
         </div>
-        <p class="text-gray-800 text-[9px] uppercase tracking-[0.7em] mt-12 font-semibold">Agathos AI • Prosperity with Honor • © 2026</p>
+        <p class="text-gray-800 text-[8px] md:text-[10px] uppercase tracking-[0.5em] mt-8">Agathos AI • Prosperity with Honor © 2026</p>
     </footer>
 
 </body>
